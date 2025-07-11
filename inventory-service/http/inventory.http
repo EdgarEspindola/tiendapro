@@ -1,0 +1,4 @@
+### Obtain products
+@baseUrl = http://localhost:8081
+
+GET {{baseUrl}}/api/products

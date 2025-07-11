@@ -1,0 +1,10 @@
+@baseUrl = http://localhost:8081
+
+### Health
+GET {{baseUrl}}/actuator/health
+
+### Info
+GET {{baseUrl}}/actuator/info
+
+### Prometheus
+GET {{baseUrl}}/actuator/prometheus/
