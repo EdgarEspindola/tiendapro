@@ -1,14 +1,14 @@
 services:
-  postgres-db:
+  sales-postgres:
     image: postgres:17-alpine
-    container_name: postgres-db
+    container_name: sales-postgres
     restart: always
     environment:
-      POSTGRES_DB: sale_db
+      POSTGRES_DB: sales_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
-      - "5432:5432"
+      - "5433:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
