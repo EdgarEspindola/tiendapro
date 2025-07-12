@@ -2,3 +2,7 @@
 @baseUrl = http://localhost:8081
 
 GET {{baseUrl}}/api/products
+
+### Get producto by ID
+
+GET {{baseUrl}}/api/products/1
