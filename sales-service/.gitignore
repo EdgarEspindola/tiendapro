@@ -1,0 +1,31 @@
+# Java
+*.class
+*.jar
+*.war
+*.iml
+*.log
+*.h2.db
+
+# Maven
+target/
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Docker
+*.env
+.env.*
