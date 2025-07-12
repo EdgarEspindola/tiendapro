@@ -1,0 +1,16 @@
+services:
+  inventory-postgres:
+    image: postgres:17-alpine
+    container_name: inventory-postgres
+    restart: always
+    environment:
+      POSTGRES_DB: inventory_db
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:

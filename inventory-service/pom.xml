@@ -72,7 +72,7 @@
 		<dependency>
       		<groupId>org.projectlombok</groupId>
       		<artifactId>lombok</artifactId>
-      		<optional>true</optional>
+      		<scope>provided</scope>
     	</dependency>
 
 		<!-- Postgresql -->
@@ -151,6 +151,8 @@
     			<artifactId>maven-compiler-plugin</artifactId>
     			<version>3.11.0</version>
     			<configuration>
+					<source>${java.version}</source>
+    				<target>${java.version}</target>
 					<!-- annotation processors used during compilation -->
         			<annotationProcessorPaths>
             			<path>
