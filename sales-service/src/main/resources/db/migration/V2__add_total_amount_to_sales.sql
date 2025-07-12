@@ -1,0 +1,1 @@
+ALTER TABLE sale ADD COLUMN total_amount DECIMAL(10, 2);
