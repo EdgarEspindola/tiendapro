@@ -72,7 +72,7 @@
 		<dependency>
       		<groupId>org.projectlombok</groupId>
       		<artifactId>lombok</artifactId>
-      		<optional>true</optional>
+      		<scope>provided</scope>
     	</dependency>
 
 		<!-- Postgresql -->
@@ -133,7 +133,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<!-- not to include lombok in the final packaged JAR -->
+					<!-- not to include lombok and mapStruct in the final packaged JAR -->
 					<excludes>
 						<exclude>
 							<groupId>org.projectlombok</groupId>
@@ -151,6 +151,8 @@
     			<artifactId>maven-compiler-plugin</artifactId>
     			<version>3.11.0</version>
     			<configuration>
+					<source>${java.version}</source>
+    				<target>${java.version}</target>
 					<!-- annotation processors used during compilation -->
         			<annotationProcessorPaths>
             			<path>
