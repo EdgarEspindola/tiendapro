@@ -4,7 +4,7 @@ services:
     container_name: postgres-db
     restart: always
     environment:
-      POSTGRES_DB: inventory_db
+      POSTGRES_DB: sale_db
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
     ports:
