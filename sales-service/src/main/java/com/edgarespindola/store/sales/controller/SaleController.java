@@ -17,7 +17,7 @@ import com.edgarespindola.store.sales.service.SaleService;
 import lombok.RequiredArgsConstructor;
 
 @RestController
-@RequestMapping("/sales")
+@RequestMapping("/api/sales")
 @RequiredArgsConstructor
 public class SaleController {
 
