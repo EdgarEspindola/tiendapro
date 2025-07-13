@@ -45,7 +45,6 @@ public class SaleServiceImpl implements SaleService {
             ProductInventoryResponse product = inventoryClient.getProductFromInventory(item.getProductId());
 
             if (product.getStock() < item.getQuantity()) {
-                // TODO: Cambiar por excepcion de dominio
                 throw new IllegalArgumentException("Stock insuficiente para el producto ID: " + item.getProductId());
             }
 
@@ -61,8 +60,6 @@ public class SaleServiceImpl implements SaleService {
         Sale saved = saleRepository.save(sale);
 
         for (SaleItem item : saved.getItems()) {
-            // TODO: Que pasa si hay un fallo a la mitad del for y la venta ya se registro
-            // en BD que sucede con el stock ya decrementado
             inventoryClient.decreaseProductStock(item.getProductId(), item.getQuantity());
         }
 

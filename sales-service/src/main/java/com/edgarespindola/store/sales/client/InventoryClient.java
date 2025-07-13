@@ -20,12 +20,6 @@ public class InventoryClient {
 
     private static final String CUSTOMER_BASE_URL = "http://localhost:8081/api/products/";
 
-    /*
-     * TODO:
-     * Cambiarás el localhost:8081 por el host/puerto real que uses, o incluso por
-     * el nombre de servicio si usas Eureka o Docker Compose más adelante.
-     * Checar FEIGN Client
-     */
     @CircuitBreaker(name = "inventoryService", fallbackMethod = "fallbackGetProduct")
     @Retry(name = "inventoryService")
     public ProductInventoryResponse getProductFromInventory(Long productId) {
