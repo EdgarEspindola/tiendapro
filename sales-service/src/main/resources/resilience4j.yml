@@ -1,0 +1,28 @@
+resilience4j:
+  circuitbreaker:
+    default:
+      slidingWindowSize: 10
+      minimumNumberOfCalls: 5
+      failureRateThreshold: 50
+      waitDurationInOpenState: 10s
+      permittedNumberOfCallsInHalfOpenState: 3
+      automaticTransitionFromOpenToHalfOpenEnabled: true
+      registerHealthIndicator: true
+      recordExceptions:
+        - java.net.ConnectException # No se puede establecer conexión TCP (servicio no levantado)
+        - java.net.SocketTimeoutException # La llamada tardó demasiado (timeout)
+        - java.io.IOException # Falla general de red o stream roto
+        - org.springframework.web.client.HttpServerErrorException # Respuesta HTTP 5xx del otro servicio
+        - org.springframework.web.client.ResourceAccessException # RestTemplate no pudo conectar o leer
+        - org.springframework.web.client.UnknownHttpStatusCodeException # El otro servicio devolvió un código HTTP no reconocido (caso raro)
+    instances:
+      inventoryService: { }
+      customerService: { }
+
+  retry:
+    default:
+      maxAttempts: 3
+      waitDuration: 2s
+    instances:
+      inventoryService: { }
+      customerService: { }
