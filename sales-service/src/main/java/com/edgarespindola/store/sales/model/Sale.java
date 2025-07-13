@@ -21,6 +21,9 @@ public class Sale {
 
     private LocalDateTime saleDate;
 
+    @Column(name = "customer_id")
+    private Long customerId;
+
     @Column(name = "total_amount")
     private BigDecimal totalAmount;
 

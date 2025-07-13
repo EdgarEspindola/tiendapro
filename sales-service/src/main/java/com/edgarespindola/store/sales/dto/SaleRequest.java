@@ -6,5 +6,6 @@ import lombok.Data;
 
 @Data
 public class SaleRequest {
+    private Long customerId;
     private List<SaleItemRequest> items;
 }

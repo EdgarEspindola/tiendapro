@@ -9,6 +9,7 @@ import lombok.Data;
 @Data
 public class SaleResponse {
     private Long saleId;
+    private Long customerId;
     private LocalDateTime saleDate;
     private BigDecimal totalAmount;
     private List<SaleItemResponse> items;
