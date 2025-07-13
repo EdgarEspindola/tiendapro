@@ -1,0 +1,19 @@
+@baseUrl = http://localhost:8082
+
+### Registrar venta
+POST {{baseUrl}}/api/sales
+Content-Type: application/json
+
+{
+    "customerId": 1,
+    "items": [
+        {
+            "productId": 1,
+            "quantity": 1
+        },
+        {
+            "productId": 2,
+            "quantity": 3
+        }
+    ]
+}
